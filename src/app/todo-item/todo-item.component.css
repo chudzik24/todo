@@ -1,0 +1,17 @@
+ul {
+    list-style-type: none;
+}
+li.todo-item {
+    list-style-type: none;
+    border: 1px solid transparent
+}
+li.todo-item:hover {
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+li.todo-item span {
+    margin: 0 20px 0 0;
+    line-height: 20px;
+    font-size: 18px;
+    color: #333;
+}
