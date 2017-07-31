@@ -1,7 +1,8 @@
-<input class="todoInput" #inputstring (keyup.enter)="addNewItem()" [(ngModel)]="newItemDescription" placeholder="Type and hit enter to add">
+<input class="todoInput" #inputstring (keyup.enter)="addNewItem()" [(ngModel)]="newItemDescription" placeholder="Type and hit enter to add"/>
 <h3 class="todotitle"><span class="titletext">To do :</span> <div class="todoprogress"></div></h3>
+<input class="searchInput" [(ngModel)]="filterValue" placeholder="Type to search"/>
 <ul>
-    <todo-item *ngFor="let item of todoItems" (selectedChanged)="todoSelectionChanged($event)" [item]="item"></todo-item>
+    <todo-item *ngFor="let item of todoItems | filter : 'description' : filterValue"  (selectedChanged)="todoSelectionChanged($event)" [item]="item"></todo-item>
 </ul>
 <h3 class="donetitle"><span class="titletext">Done :</span> <div class="doneprogress"></div></h3>
 <ul>

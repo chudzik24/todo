@@ -11,6 +11,7 @@ export class TodoListComponent implements OnInit {
   todoItems: TodoItem[] = [];
   doneItems: TodoItem[] = [];
   newItemDescription: string;
+  filterValue: string = '';
   constructor(private todoService: TodoService) { }
   ngOnInit() {
     this.todoService.getTodoItems().subscribe((items: TodoItem[]) => this.todoItems = items);
@@ -24,6 +25,7 @@ export class TodoListComponent implements OnInit {
     var id = Math.max(...this.getAllItems().map<number>((el: TodoItem) => el.id)) + 1;
     this.todoItems.push({id: id, checked: false, description: this.newItemDescription});
     this.newItemDescription = '';
+    this.filterValue = '';
   }
   private getAllItems() : TodoItem[] {
     return this.todoItems.concat(this.doneItems);

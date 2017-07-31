@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoService } from "app/todo.service";
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { SharedModule } from "shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule 
+    HttpModule,
+    SharedModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

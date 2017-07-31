@@ -30,7 +30,7 @@ h3.donetitle {
     width: 0;
     height: 8px;
 }
-.todoInput {
+.todoInput, .searchInput {
     margin: 10px 44px 29px 30px;
     background-color: #fff;
     background-image: none;
