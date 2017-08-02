@@ -7,18 +7,24 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoService } from "app/todo.service";
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { SharedModule } from "shared/shared.module";
+import { HomeComponent } from './home/home.component';
+import { DetailsComponent } from './details/details.component';
+import { AppRoutingModule } from "app/app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoItemComponent,
-    TodoListComponent
+    TodoListComponent,
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]

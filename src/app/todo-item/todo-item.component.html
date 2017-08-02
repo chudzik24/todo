@@ -2,5 +2,5 @@
   <input type="checkbox" [checked]="item.checked" (change)="itemChanged()"  />
   <span>
     {{item.description}}
-  </span> <a href="#" class="boxclose"></a>
+  </span> <button (click)="showDetails()">Details</button>
 </li>

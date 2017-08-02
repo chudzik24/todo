@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from "@angular/router";
 export interface TodoItem {
-  id: number;
+  id?: number;
   checked: boolean;
   description: string;
 }
@@ -12,13 +13,19 @@ export interface TodoItem {
 export class TodoItemComponent implements OnInit {
   @Input() item: TodoItem;
   @Output() selectedChanged:EventEmitter<TodoItem> = new EventEmitter();
-  constructor() { 
+  constructor(private router: Router) { 
 
   }
+  
   itemChanged() {
     this.item.checked = !this.item.checked;
     this.selectedChanged.emit(this.item);
   }
+
+  showDetails() {
+    this.router.navigate([`home/${this.item.id}`]);
+  }
+
   ngOnInit() {
   }
 
